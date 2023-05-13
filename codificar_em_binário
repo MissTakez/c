@@ -14,7 +14,7 @@ int main (void)
     printf("Qual é a sua msg? ");
     //reconheça a resposta
     gets(msg);
-    //aqui é pra testar mesmo! =p
+    //aqui é pra testar mesmo! =9
     printf("%s\n", msg);
     //n será o tamanho da palavra, ou seja, cada palavra irá pra um bit e você saberá o número de bits. str len, aka: string lenght
     int n = strlen(msg);
