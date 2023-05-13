@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+
+const int BB = 8;
+
+int  i, bit = 0;
+int main (void)
+{   //seleciona o idioma! sem isso aqui e algumas configurações, você fica sem o acento.
+    setlocale(LC_ALL,"Portuguese_Brazil");
+
+    //reconhece o parâmetro que você irá usar
+    char msg [100];
+    printf("Qual é a sua msg? ");
+    //reconheça a resposta
+    gets(msg);
+    //aqui é pra testar mesmo! =p
+    printf("%s\n", msg);
+    //n será o tamanho da palavra, ou seja, cada palavra irá pra um bit e você saberá o número de bits. str len, aka: string lenght
+    int n = strlen(msg);
+
+    //aqui temos o parâmeto i, que tem a ver com o bit, ou seja, incia no 0 e é menos que n. veja acima se não entendeu.
+    for(i = 0; i < n; i++)
+    {
+        //aqui vamos começar as conversões. Iniciaremos a conversão dos bits para ASCII, que irá para a variavel "value", cada bit.
+        int value = (msg[i]);
+    
+        for(int x = BB - 1; x >= 0; x--)
+        {   
+        
+            bit = (value >> x) & 1; //será equivalente a value/2^x %2, até x chegar a 0
+            printf("%d", bit);
+        }
+    printf("\n");
+    }
+    
+
+
+}
