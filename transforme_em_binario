@@ -27,8 +27,8 @@ int main (void)
     
         for(int x = BB - 1; x >= 0; x--)
         {   
-        
-            bit = (value >> x) & 1; //será equivalente a value/2^x %2, até x chegar a 0
+            //olha, honestamente, eu tava codificando value/2^x %2, mas esse código estava crashando, ainda pesquisando o porquê!
+            bit = (value >> x) & 1;  //aí descobri esse código que já trabalha com o binário através to true/false, mas ainda tentando entender como ele transforma em binário.
             printf("%d", bit);
         }
     printf("\n");
